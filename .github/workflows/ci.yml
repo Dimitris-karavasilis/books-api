@@ -37,12 +37,10 @@ jobs:
 
       - name: Verify results directory
         run: |
-          echo "=== Directory contents ==="
-          dir
-          echo "\n=== Allure results directory contents ==="
-          dir allure-results
-          echo "\n=== Target directory contents ==="
-          dir target
+          echo "=== Searching all directories for JSON files ==="
+          find . -name "*.json" -type f
+          echo "\n=== Searching target directory for JSON files ==="
+          find target -name "*.json" -type f
 
       - name: Run tests with Allure results
         run: mvn test -Dallure.results.path=allure-results -X
