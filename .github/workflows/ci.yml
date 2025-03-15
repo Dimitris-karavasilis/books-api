@@ -36,7 +36,7 @@ jobs:
         run: mvn clean install
 
       - name: Run tests with Allure results
-        run: mvn allure:serve
+        run: mvn test
 
       - name: Generate Allure Report
         run: mvn allure:report
