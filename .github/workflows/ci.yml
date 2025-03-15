@@ -35,15 +35,15 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
+      - name: Run tests with Allure results
+        run: mvn test
+
       - name: Verify results directory
         run: |
           echo "=== Searching all directories for JSON files ==="
           find . -name "*.json" -type f
           echo "\n=== Searching target directory for JSON files ==="
           find target -name "*.json" -type f
-
-      - name: Run tests with Allure results
-        run: mvn test -Dallure.results.path=allure-results -X
 
       - name: Verify results directory
         run: dir allure-results
