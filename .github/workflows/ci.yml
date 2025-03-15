@@ -38,12 +38,12 @@ jobs:
       - name: Run tests with Allure results
         run: mvn test
 
-      - name: Verify results directory
+      - name: Search for JSON files with details
         run: |
           echo "=== Searching all directories for JSON files ==="
-          find . -name "*.json" -type f
+          Get-ChildItem -Path . -Filter *.json -Recurse -File | Select-Object FullName
           echo "\n=== Searching target directory for JSON files ==="
-          find target -name "*.json" -type f
+          Get-ChildItem -Path target -Filter *.json -Recurse -File | Select-Object FullName
 
       - name: Verify results directory
         run: dir allure-results
