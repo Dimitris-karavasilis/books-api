@@ -36,7 +36,7 @@ jobs:
         run: mvn clean install
 
       - name: Run tests with Allure results
-        run: mvn test -Dallure.results.path=allure-results
+        run: mvn test -Dallure.results.path=allure-results -X
 
       - name: Verify results directory
         run: dir allure-results
