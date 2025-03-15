@@ -35,6 +35,15 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
+      - name: Verify results directory
+        run: |
+          echo "=== Directory contents ==="
+          dir
+          echo "\n=== Allure results directory contents ==="
+          dir allure-results
+          echo "\n=== Target directory contents ==="
+          dir target
+
       - name: Run tests with Allure results
         run: mvn test -Dallure.results.path=allure-results -X
 
