@@ -49,7 +49,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: books-api/target/allure-report
+          allure_results: target/allure-report
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
