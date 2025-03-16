@@ -15,8 +15,8 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <allure.results.directory>allure-results</allure.results.directory>
-        <allure.report.directory>target/allure-maven-plugin</allure.report.directory>
+        <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
+        <allure.report.directory>${project.basedir}/target/allure-report</allure.report.directory>
     </properties>
 
     <dependencies>
@@ -105,10 +105,10 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <!-- Tell Allure where to find the results -->
-                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
-                </configuration>
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; Tell Allure where to find the results &ndash;&gt;-->
+<!--                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>

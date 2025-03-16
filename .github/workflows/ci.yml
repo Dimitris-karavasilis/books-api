@@ -33,20 +33,20 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn clean test
 
-      - name: Run tests with Allure results
-        run: mvn test
+#      - name: Run tests with Allure results
+#        run: mvn test
 
-      - name: Search for JSON files with details
-        run: |
-          echo "=== Searching all directories for JSON files ==="
-          Get-ChildItem -Path . -Filter *.json -Recurse -File | Select-Object FullName
-          echo "\n=== Searching target directory for JSON files ==="
-          Get-ChildItem -Path target -Filter *.json -Recurse -File | Select-Object FullName
+#      - name: Search for JSON files with details
+#        run: |
+#          echo "=== Searching all directories for JSON files ==="
+#          Get-ChildItem -Path . -Filter *.json -Recurse -File | Select-Object FullName
+#          echo "\n=== Searching target directory for JSON files ==="
+#          Get-ChildItem -Path target -Filter *.json -Recurse -File | Select-Object FullName
 
-      - name: Verify results directory
-        run: dir allure-results
+#      - name: Verify results directory
+#        run: dir allure-results
 
       - name: Generate Allure Report
         run: mvn allure:report
