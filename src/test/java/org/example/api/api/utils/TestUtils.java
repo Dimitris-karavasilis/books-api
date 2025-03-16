@@ -4,11 +4,6 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestUtils {
 
-    @BeforeAll
-    public static void setupAllure() {
-        System.setProperty("allure.results.directory", "allure-results");
-    }
-
     public static String convertObjectToJson(Object object) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
