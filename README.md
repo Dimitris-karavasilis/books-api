@@ -35,11 +35,15 @@ cd books-api
 
 ### Install dependencies
 ```mvn clean install ```
-
-### 1️⃣ Run All Tests
+### 🚦 Running Tests
+ 1️⃣ Run All Tests
 ```mvn test```
-### 2️⃣ Generate Allure Report
+
+ 2️⃣ Generate Allure Report
 ```mvn allure:report```
+
+ 3️⃣ Open Allure Report in browser
+```mvn allure:serve```
 
 ### 🔄 CI/CD with GitHub Actions
 This project includes a GitHub Actions workflow (.github/workflows/ci.yml) to run tests automatically on every push.
@@ -50,7 +54,8 @@ Set up Java & Maven
 Run tests
 Generate and deploy Allure Report
 
-Allure Reports are generated in the target/allure-results directory.
+
+📊 Allure Reports are generated in the target/allure-results directory.
 GitHub Actions automatically updates Allure history.
 
 Check the latest test report: Allure Report
